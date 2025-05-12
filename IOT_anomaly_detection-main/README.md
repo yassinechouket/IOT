@@ -1,89 +1,21 @@
-# Temperature Anomaly Detection in IoT Devices Using Machine Learning
+![image](https://github.com/user-attachments/assets/9b2c96a7-0d74-4be8-98a6-321e9b5e6e90)
 
-## Overview
+![image](https://github.com/user-attachments/assets/ab9167a7-3b3f-4aba-9a48-90ad227a5728)
 
-<img src="./Figures/Diagram.JPG" alt="system overview" width="700" />
+![image](https://github.com/user-attachments/assets/889f743b-d797-4b41-8def-b42b075b724e)
 
-This project focuses on detecting anomalies in temperature data collected from IoT devices. It uses a combination of hardware and software components to collect, transmit, and analyze temperature data. The goal is to identify anomalies in real-time using machine learning algorithms.
+![image](https://github.com/user-attachments/assets/ad2a3789-ebf6-4fbc-8914-bb81142b35b0)
 
-## Project Components
+![image](https://github.com/user-attachments/assets/932e17f4-06e9-4ce8-9f69-39d54cd00e5b)
 
-1. **Hardware**:
-   - **ESP32**: Used for collecting temperature data from the DHT11 sensor.
-   - **Raspberry Pi**: Acts as a gateway to collect data from multiple ESP32 devices and transmit it to the cloud.
+![image](https://github.com/user-attachments/assets/4a907f2b-e665-4cd1-b7c9-39184f759541)
 
-2. **Software**:
-   - **Arduino IDE**: For programming the ESP32 to read data from the DHT11 sensor and send it via Bluetooth.
-   - **Node-RED**: For visualizing data and decrypting information received from the cloud.
-   - **MongoDB**: For storing data in the cloud.
-   - **Google Colab/Python**: For applying machine learning algorithms to detect anomalies in the data.
+![image](https://github.com/user-attachments/assets/4a4a3acd-b6fc-4add-b31f-e2a880885d33)
 
-## Steps
-<img src="./Figures/steps_diagram.JPG" alt="steps overview" width="700" />
+![image](https://github.com/user-attachments/assets/fb9430fc-65cd-4772-9f9e-5a9f7b13956f)
 
-### 1. Data Collection and Transmission
+![image](https://github.com/user-attachments/assets/fa5163a3-e828-4f13-9eb2-a47068658d96)
 
-- **ESP32 and DHT11 Sensor**: The ESP32 reads temperature data from the DHT11 sensor. This data is transmitted to the Raspberry Pi via Bluetooth.
-- **Arduino IDE**: The ESP32 is programmed using the Arduino IDE. It reads data from the sensor and sends it via Bluetooth using two programs: one in C and one in Python, utilizing the Bluepy library.
-- **Raspberry Pi**: The Raspberry Pi receives the data from the ESP32, encrypts it using the RC4 algorithm, and sends it to the cloud using the MQTT protocol. 
+![image](https://github.com/user-attachments/assets/a3d5a31a-6d3b-46a8-b57d-053c70b9e422)
 
-### 2. Data Visualization
-
-- **Node-RED Dashboard**: The data is decrypted in Node-RED and visualized in real-time. A gauge represents the current temperature, and a chart displays the temperature trend over time.
-- **Node-RED Library**: Install the necessary libraries in Node-RED to set up the user interface.
-
-### 3. Data Storage
-
-- **MongoDB**: Data is stored in a MongoDB cloud database as JSON. After creating a collection on MongoDB, data can be stored and retrieved as needed.
-
-### 4. Anomaly Detection
-<img src="./Figures/ML_diagram.JPG" alt="ML overview" width="600" />
-
-- **Machine Learning**: In the Google Colab environment, data is read using Python and analyzed using machine learning algorithms. The Isolation Forest algorithm is used to detect anomalies in the temperature data. This algorithm is unsupervised and does not require labeled data.
-- **Implementation**: The system operates in pseudo-real time. Every 10 seconds, data is read from the database, and the machine learning algorithm performs anomaly detection.
-
-### 5. Security
-
-- **Encryption and Decryption**: To ensure security, data is encrypted before sending to the MQTT servers and decrypted upon receipt. The RC4 algorithm is used for both encryption and decryption. The relevant codes are `Encrypt.py` and `Decrypt.py`.
-
-## File Structure
-
-- **sendToCloud.py**: Contains the code for encrypting and sending data to the cloud.
-- **Encrypt.py**: Handles encryption of data.
-- **Decrypt.py**: Handles decryption of data.
-- **final_nodered**: Contains the Node-RED blocks for visualization and data processing.
-
-## Installation and Setup
-
-1. **Install Node-RED and Required Libraries**:
-   - Follow Node-RED installation instructions.
-   - Install the necessary Node-RED libraries for visualization and cloud communication.
-
-2. **Set Up MongoDB**:
-   - Create a MongoDB cloud account and set up a collection.
-
-3. **Deploy Machine Learning Model**:
-   - Use Google Colab to deploy and test the machine learning model for anomaly detection.
-
-4. **Program the ESP32**:
-   - Use the Arduino IDE to upload the code for data collection and Bluetooth transmission.
-
-5. **Configure the Raspberry Pi**:
-   - Install necessary libraries and run the `sendToCloud.py` script to handle data encryption and transmission.
-
-## Usage
-
-1. **Start the ESP32 and Raspberry Pi**: Ensure both devices are powered and properly connected.
-2. **Monitor Data in Node-RED**: View real-time data and trends on the Node-RED dashboard.
-3. **Analyze Anomalies**: Check the results of anomaly detection in Google Colab.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Node-RED
-- MongoDB
-- Google Colab
-- The authors of the RC4 algorithm and Isolation Forest algorithm
+![image](https://github.com/user-attachments/assets/898c82b3-ffda-4497-8d2a-c35c91ecfc0d)
